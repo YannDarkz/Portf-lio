@@ -1,4 +1,4 @@
-body{
+body {
     background-image: url(../imagens/fundo-site.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,7 +15,7 @@ body{
     overflow: hidden;
 }
 
-.cartao{
+.cartao, .cartao_repos {
     background-color: #070d12;
     width: 370px;
     border: 2px solid #e126d9;
@@ -23,7 +23,7 @@ body{
     overflow: hidden;
 }
 
-.cartao .minhas-informacoes{
+.cartao .minhas-informacoes {
     padding-top: 20px;
     display: flex;
     flex-direction: column;
@@ -31,29 +31,29 @@ body{
     gap: 10px;
 }
 
-.cartao .minhas-informacoes img{
+.cartao .minhas-informacoes img {
     border-radius: 50%;
-    border: 4px solid #e126d9;    
+    border: 4px solid #e126d9;
 }
 
-.cartao .minhas-informacoes .nome{
+.cartao .minhas-informacoes .nome {
     font-size: 26px;
 }
 
-.cartao .minhas-informacoes .cargo{
+.cartao .minhas-informacoes .cargo {
     font-size: 20px;
     color: #b8bbc5;
 }
 
-.cartao .conteudo{
+.cartao .conteudo {
     margin-top: 15px;
 }
 
-.cartao .abas{
+.cartao .abas {
     display: flex;
 }
 
-.cartao .abas .aba{
+.cartao .abas .aba {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -62,59 +62,60 @@ body{
     transition: background-color 0.2s ease-in-out;
 }
 
-.cartao .abas img{
+.cartao .abas img {
     width: 30px;
 }
 
-.cartao .abas .aba.selecionado{
+.cartao .abas .aba.selecionado {
     background-color: #262626;
 }
 
-.cartao .informacoes-abas{
+.cartao .informacoes-abas {
     background-color: #262626;
 }
 
-.cartao .abas .aba:hover{
+.cartao .abas .aba:hover {
     background-color: #414141;
 }
 
-.informacoes-abas .informacao{
+.informacoes-abas .informacao {
     min-height: 260px;
     padding: 15px;
     display: none;
 }
 
-.informacoes-abas .informacao.selecionado{
+.informacoes-abas .informacao.selecionado {
     display: block;
 }
 
-.informacoes-abas .sub-titulo{
+.informacoes-abas .sub-titulo {
     font-size: 22px;
     margin-bottom: 25px;
     text-align: center;
 }
 
-.informacoes-abas .descricao{
+.informacoes-abas .descricao {
     font-size: 20px;
     max-height: 180px;
     overflow-y: auto;
     padding-right: 15px;
 }
 
-.informacoes-abas .descricao span{
+.informacoes-abas .descricao span {
     color: #02d08f;
 }
 
-.redes-sociais{
+.redes-sociais {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
     align-items: center;
     max-height: 180px;
     overflow-y: auto;
 }
 
-.redes-sociais li a{    
+.redes-sociais li a,
+.cartao_repos li a  {
     width: 250px;
     display: block;
     color: #f3f3f3;
@@ -125,18 +126,98 @@ body{
     border-radius: 10px;
 }
 
-.redes-sociais li a:hover{
+.redes-sociais li a:hover {
     opacity: 0.8;
 }
 
-.redes-sociais .curriculo{
+.redes-sociais .projetos {
+    background-color: #a015f1;
+}
+
+.redes-sociais .curriculo {
     background-color: #06c185;
 }
 
-.redes-sociais .linkedin{
+.redes-sociais .linkedin {
     background-color: #1d87bd;
 }
 
-.redes-sociais .github{
+.redes-sociais .github {
     background-color: #545454;
 }
+
+
+/* Pagina repositorios.html */
+
+.cartao_repos {
+    background-color: transparent;
+    padding: 1rem;
+    border: 4px double rgb(121, 10, 136);
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    align-items: center;
+    
+}
+
+.cartao_repos .cabecalho {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.cartao_repos .cabecalho img {
+    width: 30px;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    filter: invert(100%);
+    animation: moveLeftRight 1s ease-in-out infinite;
+    
+   
+    
+}
+
+.cartao_repos .cabecalho h1 {
+    animation: moveUpDown 2.5s ease-in-out infinite;
+
+}
+
+.cartao_repos .projeto1 {
+    background-color: #a015f1;
+    transition: 0.6s ease-in-out;
+}
+
+.cartao_repos .projeto2 {
+    background-color: #a015f1;
+    transition: 0.6s ease-in-out;
+}
+
+.cartao_repos .projeto3 {
+    background-color: #a015f1;
+    font-size: 1rem;
+    transition: 0.6s ease-in-out;
+}
+
+.cartao_repos .projeto1:hover,
+.cartao_repos .projeto2:hover,
+.cartao_repos .projeto3:hover {
+    background-color: #e126d9;
+
+}
+
+@keyframes moveUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    
+}
+
+@keyframes moveLeftRight {
+    0%, 100% { transform:rotate(90deg)  translateY(0px);;}
+    50% { transform: rotate(90deg)  translateY(-5px);; }
+    
+}
+
+
+
